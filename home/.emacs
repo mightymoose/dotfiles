@@ -16,3 +16,7 @@ There are two things you can do about this warning:
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
+
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-agenda-files (list "~/Dropbox/agenda/" "~/Dropbox/agenda/fitness/" "~/Dropbox/agenda/fitness/workouts/"))
+
