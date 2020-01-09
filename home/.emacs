@@ -22,7 +22,7 @@ There are two things you can do about this warning:
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (solarized-theme magit))))
+ '(package-selected-packages (quote (typescript-mode company solarized-theme magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -47,3 +47,10 @@ There are two things you can do about this warning:
   )
 
 (setq-default display-line-numbers 'relative)
+
+(add-hook 'after-init-hook 'global-company-mode)
+
+(require 'company-lsp)
+(push 'company-lsp company-backends)
+
+(setq company-idle-delay 0)
