@@ -45,3 +45,5 @@ There are two things you can do about this warning:
   (menu-bar-mode -1) 
   (toggle-scroll-bar -1) 
   )
+
+(setq-default display-line-numbers 'relative)
