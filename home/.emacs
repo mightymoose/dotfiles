@@ -61,3 +61,7 @@ There are two things you can do about this warning:
   :ensure t
   :init (global-flycheck-mode))
 
+(require 'lsp-mode)
+(add-hook 'typescript-mode-hook #'lsp-deferred)
+
+(setq exec-path (append exec-path '("~/.asdf/shims/")))

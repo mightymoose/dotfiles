@@ -95,39 +95,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$HOME/Library/Python/2.7/lib/python/site-packages:$HOME/.bin:$HOME/.local/bin::$PATH"
-
-export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
-
-export bitbucketToken="ODIyNjgwMjM2NjQ4Op1Ko4QzKJQs7//BKuAabQ/fB5bS"
-
-
-eval "$(rbenv init - --no-rehash zsh)"
-
-export PGUSER=postgres
-export PGHOST=localhost
-
-export BASIS_USERNAME=admin@centro.net
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source $HOME/.zshenv
-
 alias g="git"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval "$(nodenv init -)"
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 
-# . $HOME/.asdf/asdf.sh
-
-# . $HOME/.asdf/completions/asdf.bash
-
-. $HOME/Library/Python/2.7/bin/virtualenvwrapper.sh
-
-alias killspring='pgrep spring\ server | xargs kill'
-alias m='tmuxinator'
-alias v='vim'
-
-[[ $TMUX != "" ]] && export TERM="xterm-256color"
+. $HOME/.homesick/repos/homeshick/homeshick.sh
