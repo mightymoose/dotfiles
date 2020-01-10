@@ -61,5 +61,3 @@ There are two things you can do about this warning:
   :ensure t
   :init (global-flycheck-mode))
 
-(exec-path-from-shell-initialize)
- 
