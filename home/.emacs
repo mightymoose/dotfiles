@@ -23,7 +23,8 @@ There are two things you can do about this warning:
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(avy company-lsp typescript-mode company solarized-theme magit)))
+   (quote
+    (yaml-mode projectile avy company-lsp typescript-mode company solarized-theme magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -62,7 +63,14 @@ There are two things you can do about this warning:
 
 (require 'lsp-mode)
 (add-hook 'typescript-mode-hook #'lsp-deferred)
-
-(setq exec-path (append exec-path '("~/.asdf/shims/")))
+(add-hook 'elixir-mode-hook #'lsp-deferred)
 
 (global-set-key (kbd "C-;") 'avy-goto-char)
+
+(add-to-list 'exec-path "~/.asdf/shims/")
+(add-to-list 'exec-path "~/.elixir-ls/release/")
+
+(require 'projectile)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(projectile-mode +1)

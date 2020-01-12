@@ -1,0 +1,1 @@
+("~/Documents/mmoaig/mmoaig/" "~/.homesick/repos/dotfiles/")
