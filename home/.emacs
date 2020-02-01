@@ -24,7 +24,7 @@ There are two things you can do about this warning:
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yaml-mode projectile avy company-lsp typescript-mode company solarized-theme magit))))
+    (helm helm-projectile yasnippet yaml-mode projectile avy company-lsp typescript-mode company solarized-theme magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -35,7 +35,7 @@ There are two things you can do about this warning:
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-agenda-files (list "~/Dropbox/agenda/" "~/Dropbox/agenda/fitness/" "~/Dropbox/agenda/fitness/workouts/"))
 
-(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key [(super g)] 'magit-status)
 
 (load-theme 'solarized-dark t)
 
@@ -64,6 +64,7 @@ There are two things you can do about this warning:
 (require 'lsp-mode)
 (add-hook 'typescript-mode-hook #'lsp-deferred)
 (add-hook 'elixir-mode-hook #'lsp-deferred)
+(add-hook 'elixir-mode-hook #'yas-minor-mode)
 
 (global-set-key (kbd "C-;") 'avy-goto-char)
 
@@ -71,6 +72,7 @@ There are two things you can do about this warning:
 (add-to-list 'exec-path "~/.elixir-ls/release/")
 
 (require 'projectile)
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(define-key projectile-mode-map [?\s-f] 'helm-projectile)
+(define-key projectile-mode-map [?\s-p] 'helm-projectile-switch-project)
 (projectile-mode +1)
+
